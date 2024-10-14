@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, text
-
-engine = create_engine("mysql+pymysql://root:root@localhost/mcet_career?charset=utf8mb4")
+from creds import *
+engine = create_engine(creds)
 
 def load_jobs_from_db():
         with engine.connect() as conn:
